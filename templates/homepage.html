@@ -1,0 +1,9 @@
+<html>
+    {% if output|length > 0 %}
+        {% for item in output.split("\n") %}
+            {{ item }} </br>
+        {% endfor %}
+    {% else %}
+        <p> Empty </p>
+    {% endif %}
+</html>
