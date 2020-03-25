@@ -6,13 +6,12 @@ from user_definition import *
 
 application = Flask(__name__)
 
-def read_s3_obj(bucket_name):
+def read_s3_obj(bucket, filename):
     """ Read from s3 bucket"""
     try:
-        s3 = boto3.resource('s3')
-        bucket = s3.Bucket(bucket_name)
-        for obj in bucket.objects.all():
-            body = obj.get()['Body'].read().decode('utf-8')
+        s3 = boto3.client('s3')
+        obj = s3.get_object(Bucket=bucket, Key=filename)
+        body = obj['Body'].read().decode('utf-8')
         return body
     except:
         ""
@@ -21,7 +20,7 @@ def read_s3_obj(bucket_name):
 @application.route('/', methods=['GET', 'POST'])
 def homepage():
     """ homepage page -- shown on the beginning """
-    body = read_s3_obj(bucket_name)
+    body = read_s3_obj(bucket_name, filename)
     print(body)
     return render_template('homepage.html', output=body)
 
