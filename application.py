@@ -14,8 +14,8 @@ def read_s3_obj(bucket, filename):
         obj = s3.get_object(Bucket=bucket, Key=filename)
         body = obj['Body'].read().decode('utf-8')
         return body
-    except:
-        return ""
+    except Exception as e:
+        return e
 
 
 @application.route('/', methods=['GET', 'POST'])
