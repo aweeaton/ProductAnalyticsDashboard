@@ -2,7 +2,7 @@
 This web application allows users to improve their media literacy by taking a critical view towards what news items are forwarded to them in a quick, informative dashboard. This “one-stop shop” will automate cross-checking for quick verification and provide a more complex approach of machine learning as an option, so they can understand why and how to verify digital information.
 
 ### Links:
-* [Web Application](http://factnews.us-west-2.elasticbeanstalk.com/)
+* [Web Application](http://factnews-web.eba-ptemxq7k.us-west-2.elasticbeanstalk.com/)
 * [Business Plan](https://docs.google.com/document/d/1oIBXgMVup8_HPtzGxN4H2jUbWa3_rOgGf97EBl-UYUE/edit)
 * [Trello](https://trello.com/b/gVJh9SLl/product-analytics-project)
 
