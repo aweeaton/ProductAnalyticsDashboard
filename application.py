@@ -6,6 +6,7 @@ from user_definition import *
 
 application = Flask(__name__)
 
+
 def read_s3_obj(bucket, filename):
     """ Read from s3 bucket"""
     try:
@@ -14,7 +15,7 @@ def read_s3_obj(bucket, filename):
         body = obj['Body'].read().decode('utf-8')
         return body
     except:
-        ""
+        return ""
 
 
 @application.route('/', methods=['GET', 'POST'])
